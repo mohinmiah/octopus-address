@@ -1,0 +1,15 @@
+@import "/src/styles/colours.scss";
+@import "/src/styles/weights.scss";
+@import "/src/styles/spacing.scss";
+
+.header {
+
+    background-color: $octopusPurple;
+    color:$white;
+    padding: $normalPadding;
+    letter-spacing: -0.15em;
+
+    .subtitle {
+        font-weight: $lightestFontWeight;
+    }
+}

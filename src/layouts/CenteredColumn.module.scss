@@ -1,0 +1,9 @@
+@import "/src/styles/spacing.scss";
+
+.layout {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: $smallPadding;
+}
