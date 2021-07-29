@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap');
+@import "/src/styles/colours.scss";
+@import "/src/styles/spacing.scss";
 
 body {
   margin: 0;
@@ -9,4 +11,18 @@ body {
 
 h1, h2 {
   font-family: 'Comfortaa', Gotham, helvetica, arial;
+}
+
+input, select {
+  background-color: $grey;
+  border-radius: 3px;
+  border: none;
+  font-size: 1.1em;
+  padding: $smallPadding;
+}
+
+label {
+  font-size: small;
+  text-align: left;
+  width: 100%;
 }

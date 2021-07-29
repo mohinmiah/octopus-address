@@ -1,0 +1,17 @@
+@import "/src/styles/spacing.scss";
+@import "/src/styles/colours.scss";
+
+@mixin primaryButton {
+    background-color: $primaryButtonColor;
+    border: 0;
+    border-radius: 3px;
+    color: $white;
+    font-size: 1.1em;
+    font-weight: bold;
+    min-width: 5em;
+    padding: $smallPadding;
+
+    &:hover {
+        background-color: $primaryButtonColorHover;
+    }
+}

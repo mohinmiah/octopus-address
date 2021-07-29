@@ -1,11 +1,11 @@
 import { applyMiddleware, combineReducers, createStore, Store } from "redux";
 import thunk from "redux-thunk";
 import { locationReducer, LocationState } from "./location/LocationReducer";
-import { userReducer } from "./user/UserReducer";
+import { userReducer, UserState } from "./user/UserReducer";
 
 export interface AppState {
     location: LocationState;
-    user: any;
+    user: UserState;
 }
 
 const rootReducer = combineReducers({

@@ -9,9 +9,6 @@ interface AddressSelectorProps {
 
 export default class AddressSelector extends React.Component<AddressSelectorProps> {
 
-    constructor(props: AddressSelectorProps) {
-        super(props);
-    }
 
     renderLoading(): ReactNode {
         return <div className={styles.loading}>Loading...</div>

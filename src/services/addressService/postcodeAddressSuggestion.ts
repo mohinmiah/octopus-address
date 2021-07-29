@@ -14,6 +14,7 @@ export interface AddressSuggestion {
     "county": string;
     "district": string;
     "country": string;
+    "postcode"?: string;
 }
 
 export default interface PostcodeAddressSuggestion {

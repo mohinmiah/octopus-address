@@ -1,0 +1,37 @@
+@import "/src/styles/spacing.scss";
+@import "/src/styles/colours.scss";
+@import "/src/styles/mixins.scss";
+
+.container {
+    input {
+        border: none;
+        margin-bottom: $medMargin;
+        width: 100%;
+    }
+}
+
+.container.invalid {
+    input[data-required="true"] {
+        border: 1px solid $required;
+    }
+}
+
+.durationContainer {
+    select {
+        margin-right: $medMargin;
+    }
+}
+
+.saveButton {
+    @include primaryButton;
+    margin: $largeMargin;
+}
+
+.required {
+    color: $required;
+}
+
+.validationMessage {
+    color: $required;
+    margin:$medMargin;
+}

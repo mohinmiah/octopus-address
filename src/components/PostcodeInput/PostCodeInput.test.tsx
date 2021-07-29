@@ -1,3 +1,4 @@
+import { findByText } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
@@ -50,4 +51,18 @@ it("should call onPostcodeSearch on search button click", () => {
     validateCallbackAndExpectedValue(myCallback, expectedValue);
 });
 
+const validateErrorMessageForError: Function = async (errorString: string, textMatch: RegExp) => {
+    act(() => {
+        render(<PostCodeInput onPostcodeSearch={() => { }} serviceError={errorString} />, container);
+    });
+    expect(await findByText(container, textMatch)).toBeVisible();
+}
+
+it("should show a specfic error message, when a 400 error is passed in", async () => {
+    await validateErrorMessageForError("400", /Enter a/ig);
+});
+
+it("should show a general error message, when an error is passed in", async () => {
+    await validateErrorMessageForError("500", /Sorry/ig);
+});
 
