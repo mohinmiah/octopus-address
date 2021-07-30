@@ -1,18 +1,23 @@
 @import "/src/styles/colours.scss";
 @import "/src/styles/spacing.scss";
 
-.container {
+.container, .wrapper {
+    width: 100%;
+}
+
+.wrapper {
     position: relative;
 }
 
 .searchButton {
     background-color: $grey;
     border: 0;
-    height:1em;
     padding: $smallPadding;
     position: absolute;
-    right: 0;
-
+    right: -1.25em;
+    top:0;
+    height: 100%;
+    min-width: 42px;
     &:hover {
         background-color: $darkGrey;
     }
@@ -21,4 +26,9 @@
 .postCodeInput {
     outline-color: transparent;
     width: 100%;
+}
+
+.error {
+    color: $required;
+    margin-top: $medMargin;
 }

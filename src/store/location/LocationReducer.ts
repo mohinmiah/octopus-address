@@ -29,6 +29,12 @@ export const locationReducer: Reducer<any, PayloadAction> = (prevState: any = in
             newState = { ...newState, selectedSuggestion: action.payload, suggestions: undefined };
             newState.selectedSuggestion.postcode = prevState.suggestions.postcode;
             break;
+        case LocationActions.APPLY_ADDRESS_SUGGESTION.type:
+            newState = { ...newState, selectedSuggestion: action.payload, suggestions: undefined };
+            break;
+        case LocationActions.CLEAR_ADDRESS_SUGGESTION.type:
+            newState = { ...newState, selectedSuggestion: undefined, suggestions: undefined };
+            break;
     }
     return newState;
 }

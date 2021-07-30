@@ -15,3 +15,17 @@
         background-color: $primaryButtonColorHover;
     }
 }
+
+@mixin loading {
+    background-image: linear-gradient(90deg, #cccccc, $grey);
+
+    @keyframes load {
+        from {background-size: 200%;}
+        to {background-size: 100%;}
+    }
+
+    animation-name: load;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}

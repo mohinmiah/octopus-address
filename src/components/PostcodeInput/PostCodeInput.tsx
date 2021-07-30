@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { CenteredColumn } from "../../layouts/CenteredColumnLayout";
 import styles from "./PostCodeInput.module.scss";
+import searchSvg from "../../images/search.svg";
 
 interface PostCodeInputProps {
     onPostcodeSearch: Function;
@@ -31,7 +32,6 @@ export default class PostCodeInput extends React.Component<PostCodeInputProps, P
     }
 
     displayErrorMessage(): string {
-        console.log(this.props.serviceError)
         let errorMessage: string = "Sorry, there was an error finding your address. Try again.";
         switch (this.props.serviceError) {
             case "400":
@@ -50,16 +50,19 @@ export default class PostCodeInput extends React.Component<PostCodeInputProps, P
             <div className={styles.container}>
                 <CenteredColumn>
                     <label htmlFor="postcodeInput">Your address:</label>
-                    <input type="text"
-                        id="postcodeInput"
-                        value={this.state.postcode}
-                        className={styles.postCodeInput}
-                        onChange={(event) => this.onChange(event)}
-                        onKeyUp={(event) => this.handleKeyInput(event)} />
-                    <button className={styles.searchButton} onClick={() => this.handlePostcodeLookup()}>&#128269;</button>
-                    {this.props.serviceError && <div>{this.displayErrorMessage()}</div>}
+                    <div className={styles.wrapper}>
+                        <input type="text"
+                            id="postcodeInput"
+                            value={this.state.postcode}
+                            className={styles.postCodeInput}
+                            onChange={(event) => this.onChange(event)}
+                            onKeyUp={(event) => this.handleKeyInput(event)} />
+                        <button className={styles.searchButton} onClick={() => this.handlePostcodeLookup()}><img src={searchSvg} alt="search" /></button>
+                    </div>
+                    {this.props.serviceError && <div className={styles.error}>{this.displayErrorMessage()}</div>}
                 </CenteredColumn>
             </div>
         );
     }
+
 }

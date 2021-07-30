@@ -3,6 +3,8 @@
 @import "/src/styles/mixins.scss";
 
 .container {
+
+    width: 100%;
     input {
         border: none;
         margin-bottom: $medMargin;

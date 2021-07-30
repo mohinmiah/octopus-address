@@ -1,0 +1,20 @@
+@import "/src/styles/spacing.scss";
+@import "/src/styles/colours.scss";
+@import "/src/styles/mixins.scss";
+
+.container, .loading {
+    margin: $medMargin;
+    width: 100%;
+}
+
+.loading {
+    @include loading;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 2em;
+}
+
+.addressSelector {
+    width: 100%;
+}

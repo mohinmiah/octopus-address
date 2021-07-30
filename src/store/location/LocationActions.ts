@@ -22,5 +22,7 @@ export default class LocationActions {
     });
 
     static readonly SELECT_ADDRESS_SUGGESTION = createAction<AddressSuggestion | undefined>("location/selectAddressSuggestion");
+    static readonly CLEAR_ADDRESS_SUGGESTION = createAction<AddressSuggestion | undefined>("location/clearAddressSuggestion");
+    static readonly APPLY_ADDRESS_SUGGESTION = createAction<AddressSuggestion | undefined>("location/applyAddressSuggestion");
 
 }

@@ -16,9 +16,8 @@ export default class AddressService {
                     result.complete();
                 })
             } else {
-                throwError(() => {
-                    return of(new Error(`${response.status}`));
-                });
+                result.error(new Error(`${response.status}`));
+                result.complete();
             }
         });
         return result.asObservable();

@@ -15,19 +15,20 @@ export default class AddressSelector extends React.Component<AddressSelectorProp
     }
 
     handleSelect(event: React.ChangeEvent<HTMLSelectElement>) {
-        const address: AddressSuggestion | undefined = this.props.suggestions?.addresses[parseInt(event.target.value, 10)];
+        const index: number = parseInt(event.target.value, 10);
+        const address: AddressSuggestion | undefined = (this.props.suggestions?.addresses) ? this.props.suggestions?.addresses[index] : undefined;
         this.props.onSelected(address);
     }
 
     renderSelector(): ReactNode {
-        return <select className={styles.addressSelector} defaultValue="-1" onChange={(event) => { this.handleSelect(event); }}>
+        return <div className={styles.container} ><select className={styles.addressSelector} defaultValue="-1" onChange={(event) => { this.handleSelect(event); }}>
             <option key="-1" value="-1" disabled >Please select an address...</option>
             {
-                this.props.suggestions?.addresses.map((address, i) => {
+                this.props.suggestions?.addresses && this.props.suggestions?.addresses.map((address, i) => {
                     return <option key={i} value={i}>{address.line_1}</option>
                 })
             }
-        </select>
+        </select></div>
     }
 
     render(): ReactNode {

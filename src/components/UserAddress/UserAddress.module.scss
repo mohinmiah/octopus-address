@@ -1,0 +1,47 @@
+@import "/src/styles/spacing.scss";
+@import "/src/styles/colours.scss";
+
+.container {
+    display: flex;
+    background-color: $grey;
+    width: 100%;
+}
+
+.duration, .address {
+    font-size: small;
+    font-weight: bold;
+    padding: $normalPadding;
+}
+.address {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-bottom: $smallPadding;
+    width: 100%;
+    
+    li {
+        margin-right: $smallMargin;
+    }
+}
+
+
+.duration {
+    padding-top: 0;
+}
+
+.controlPanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    button {
+        background-color: $grey;
+        border: none;
+        min-height: 42px;
+        width: 42px;
+
+        &:hover {
+            background-color: $darkGrey;
+        }
+    }
+}
