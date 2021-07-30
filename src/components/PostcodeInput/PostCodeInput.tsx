@@ -49,7 +49,7 @@ export default class PostCodeInput extends React.Component<PostCodeInputProps, P
         return (
             <div className={styles.container}>
                 <CenteredColumn>
-                    <label htmlFor="postcodeInput">Your address:</label>
+                    <label htmlFor="postcodeInput">Postcode</label>
                     <div className={styles.wrapper}>
                         <input type="text"
                             id="postcodeInput"
